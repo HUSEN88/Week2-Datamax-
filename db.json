@@ -1,0 +1,94 @@
+{
+    "clients": [
+        {
+            "picName": "assets/Images/ratan-tata.webp",
+            "name": "Ratan Tata",
+            "email": "ratan@gmail.com",
+            "randomPhoto": [
+                {
+                    "photo": "assets/Images/random.png"
+                },
+                {
+                    "photo": "assets/Images/random2.jpeg"
+                },
+                {
+                    "photo": "assets/Images/random4.jpg"
+                }
+            ]
+        },
+        {
+            "picName": "assets/Images/bilgates.jpg",
+            "name": "Bil Gates",
+            "email": "bil@gmail.com",
+            "randomPhoto": [
+                {
+                    "photo": "assets/Images/random1.jpg"
+                },
+                {
+                    "photo": "assets/Images/random3.png"
+                }
+            ]
+        },
+        {
+            "picName": "assets/Images/sundarpichai.jpg",
+            "name": "Sundar Pichai",
+            "email": "sundar@gmail.com",
+            "randomPhoto": [
+                {
+                    "photo": "assets/Images/random1.jpg"
+                },
+                {
+                    "photo": "assets/Images/random6.jpg"
+                },
+                {
+                    "photo": "assets/Images/random8.jpg"
+                }
+            ]
+        },
+        {
+            "picName": "assets/Images/jeff.jpg",
+            "name": "Jeff",
+            "email": "jeff@gmail.com",
+            "randomPhoto": [
+                {
+                    "photo": "assets/Images/random9.jpg"
+                },
+                {
+                    "photo": "assets/Images/random2.jpeg"
+                },
+                {
+                    "photo": "assets/Images/random5.jpg"
+                }
+            ]
+        },
+        {
+            "picName": "assets/Images/profile1.png",
+            "name": "Adams",
+            "email": "adams@gmail.com",
+            "randomPhoto": [
+                {
+                    "photo": "assets/Images/random10.png"
+                },
+                {
+                    "photo": "assets/Images/random7.jpg"
+                }
+            ]
+        },
+        {
+            "picName": "assets/Images/profile2.jpg",
+            "name": "John Parker",
+            "email": "john@gmail.com",
+            "randomPhoto": [
+                {
+                    "photo": "assets/Images/random3.png"
+                },
+                {
+                    "photo": "assets/Images/random1.jpg"
+                },
+                {
+                    "photo": "assets/Images/random4.jpg"
+                }
+            ]
+        }
+    ]
+}

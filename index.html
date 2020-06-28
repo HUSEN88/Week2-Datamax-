@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datamax</title>
+    <link rel="shortcut icon" href="./assets/Images/profile.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body onload="render()">
+    <navbar>
+        <div class="grid-container">
+            <div>
+                <h1 class="datamax">datamaX</h1>
+            </div>
+            <section>
+                <h3 class="h1 inline-block">My Clients</h3>
+                <img src="./assets/Images/notification.png" id="bell" class="m-icon float-right" alt="">
+            </section>
+            <section class="float-right">
+                <div class="dropdown float-right">
+                    <button class="btn btn btnlog dropdown-toggle" onclick="maintoggle()" type="button"
+                        data-toggle="dropdown"><img src="./assets/Images/profile.jpg" class="drop-img"> Naved
+                        <span class="caret"></span></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="drop">
+                        <a class="dropdown-item" href="#">Demo</a>
+                        <a class="dropdown-item" href="#">Demo</a>
+                        <a class="dropdown-item" href="#">Demo</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </navbar>
+    <div class="d-flex mt-5">
+        <div>
+            <aside>
+                <div class="wrapper">
+                    <div class="sidebar text-md">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-tachometer" id="fb" aria-hidden="true"></i><span class="nav-text">Dashboard</span></a></li>
+                            <li class="active"><a href="#" class="active-color"><i class="fa fa-users"
+                                        aria-hidden="true" id="fc"></i><span class="nav-text"> My Clients</span></a></li>
+                            <li><a href="#"><i class="fa fa-calendar-check-o" id="fd" aria-hidden="true"></i><span class="nav-text">Client Projects</span></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-address-card" id="fe" aria-hidden="true"></i><span class="nav-text"> invite Client</span></a></li>
+                            <li><a href="#"><i class="fa fa-comments-o" id="ff" aria-hidden="true"></i><span class="nav-text">Message</span></a></li>
+                            <li><a href="#"><i class="fa fa-cog" id="fg" aria-hidden="true"></i><span class="nav-text">Settings</span></a></li>
+                        </ul>
+                    </div>
+                    </div>
+            </aside>
+        </div>
+        <div class="main-section" onload="render()">
+            <section>
+                <div class="top-head">
+                    <div class="head">
+                        <section class="dropdown client-highlight">
+                            <button class="btn btn active-btn dropbtn dropdown-toggle" onclick="toggledrop()"
+                                type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Active Clients
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="drop-content">
+                                <a class="dropdown-item" href="#">Demo</a>
+                                <a class="dropdown-item" href="#">Demo</a>
+                                <a class="dropdown-item" href="#">Demo</a>
+                            </div>
+                            <p class="total-14">14 total</p>
+                            <div class="d-flex">
+                                <span>
+                                    <h6 class="pr-0 sortby font-weight-light">Sorted By</h6>
+                                </span>
+                                <section class="dropdown">
+                                    <button class="btn btn active-btn btnactive pl-0 font-weight-bold dropdown-toggle"
+                                        onclick="toggleActive()" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Active
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="drop-active">
+                                        <a class="dropdown-item" href="#">Demo</a>
+                                        <a class="dropdown-item" href="#">Demo</a>
+                                        <a class="dropdown-item" href="#">Demo</a>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                        <section class="client-sort">
+                            <form class="form-inline  justify-content-center  md-form form-sm mt-0">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                                    aria-label="Search">
+                            </form>
+                            <div class="btn-group ">
+                                <button type="button" onclick="filterdrop()"
+                                    class="btn btn-success btnfilter dropdown-toggle px-3    " data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Filter
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu" id="filter">
+                                    <a class="dropdown-item" href="#">Demo</a>
+                                    <a class="dropdown-item" href="#">Demo</a>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary">Search</button>
+                        </section>
+                    </div>
+                </div>
+
+            </section>
+            <div id="wrapper-profile" class="wrap-card">
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script id="clienttpl" type="text/template">
+        {{#clients}}
+        <div class="client">
+            <div class="card" >
+                <div class="card-body">
+                <img  src="{{picName}}" alt="Card image cap"><i class="fa fa-check-circle overimage"></i>
+
+                  <h5 class="card-title">{{name}}</h5>
+                  <p class="card-text"><span class="email">{{email}}</span></p>
+                  <div class="floter">
+                    {{#randomPhoto}}
+                        <img src="{{photo}}" class="floterimg" alt=""> 
+                    {{/randomPhoto}}
+                  </div>
+                  <div class="btn-side">
+                    <a href="#" class="btn btn"><i class="fa fa-user-o" aria-hidden="true"></i> profile</a>
+                    <a href="#" class="btn btn"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        {{/clients}}
+   </script>
+    <script src="app.js"></script>
+</body>
+</html>
